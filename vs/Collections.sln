@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChmHelper", "..\ChmHelper\ChmHelper.csproj", "{BDCC852D-F1F3-40B3-AD23-2AC6CB1881A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7A3B5D6C-ECB6-4C33-9DBB-50FE9B59BEF4}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDCC852D-F1F3-40B3-AD23-2AC6CB1881A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCC852D-F1F3-40B3-AD23-2AC6CB1881A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCC852D-F1F3-40B3-AD23-2AC6CB1881A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCC852D-F1F3-40B3-AD23-2AC6CB1881A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1A565FE-831E-4B52-BAEB-2ED4C343B00D}
+	EndGlobalSection
+EndGlobal

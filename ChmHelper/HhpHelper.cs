@@ -112,26 +112,31 @@ namespace ChmHelper
 				""");
 		}
 
-		void WriteContentItems()
+		static bool GetDirsAndFiles(string dir, out string[] dirs, out string[] files)
 		{
-			WriteHHCContent(rootDir.FullName);
+			dirs = Directory.GetDirectories(dir);
+			files = Directory.GetFiles(dir, "*.htm").Concat(Directory.GetFiles(dir, "*.html")).ToArray();
+			return files.Length != 0 || dirs.Length != 0;
 		}
 
-		void WriteHHCContent(string folderPath)
+		void WriteContentItems()
 		{
-			var directories = Directory.GetDirectories(folderPath);
-			var files = Directory.GetFiles(folderPath, "*.htm").Concat(Directory.GetFiles(folderPath, "*.html")).ToArray();
+			if (GetDirsAndFiles(rootDir.FullName, out var dirs, out var files))
+				WriteHHCContent(dirs, files);
+		}
 
-			if (files.Length == 0 && directories.Length == 0)
-				return;
-
+		void WriteHHCContent(string[] directories, string[] files)
+		{
 			foreach (var dir in directories)
 			{
+				if (!GetDirsAndFiles(dir, out var dirs2, out var files2))
+					continue;
+
 				swhhc.WriteLine($"<LI> <OBJECT type=\"text/sitemap\">");
 				swhhc.WriteLine($"<param name=\"Name\" value=\"{Path.GetFileName(dir)}\">");
 				swhhc.WriteLine("</OBJECT>");
 				swhhc.WriteLine("<UL>");
-				WriteHHCContent(dir);
+				WriteHHCContent(dirs2, files2);
 				swhhc.WriteLine("</UL>");
 			}
 
